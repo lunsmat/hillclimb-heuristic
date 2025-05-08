@@ -19,7 +19,7 @@
                 results.Add(result);
             }
 
-            var timeList = from result in results select result.GetWatchTicks();
+            var timeList = from result in results select result.GetWatchMS();
             var iterationList = from result in results select (long) result.GetIterations();
 
             var timeAverage = timeList.Average();
@@ -33,18 +33,18 @@
 
             var fiveBestSolutions = (from result in results
                 orderby result.GetBestState().CalculateObjective() ascending
-                select result).Take(10);
+                select result).Take(5);
 
             Console.WriteLine($"======================================= Resultados =======================================");
-            Console.WriteLine($"Media de Tempo: {timeAverage} Ticks");
+            Console.WriteLine($"Media de Tempo: {timeAverage}ms");
             Console.WriteLine($"Media de Iterações: {iterationAverage} Iterações");
-            Console.WriteLine($"Desvio Padrão de Tempo: {timeStandardDeviation} Ticks");
+            Console.WriteLine($"Desvio Padrão de Tempo: {timeStandardDeviation}ms");
             Console.WriteLine($"Desvio Padrão de Iterações: {iterationStandardDeviation} Iterações");
-            Console.WriteLine($"Menor Tempo: {minorTime} Ticks");
+            Console.WriteLine($"Menor Tempo: {minorTime}ms");
             Console.WriteLine($"Menor Número de Iterações: {minorIterations} Iterações");
 
             Console.WriteLine();
-            Console.WriteLine("10 Melhores resultados");
+            Console.WriteLine("5 Melhores resultados");
 
             foreach (var result in fiveBestSolutions)
             {

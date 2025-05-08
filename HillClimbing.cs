@@ -33,7 +33,6 @@ namespace HillClimbingHeuristic
                 }
                 neighbour.FillState(bestNeighbour.GetState());
 
-
                 result.AddIteration();
             } while (limitIterations == -1 || limitIterations > result.Iterations);
 
@@ -60,9 +59,9 @@ namespace HillClimbingHeuristic
             Watch.Stop();
         }
 
-        public long GetWatchTicks()
+        public long GetWatchMS()
         {
-            return Watch.ElapsedTicks;
+            return Watch.ElapsedMilliseconds;
         }
 
         public override string ToString()
