@@ -1,6 +1,6 @@
 O seguinte trabalho implementa a Hill Climbing para o seguinte problema
 
-<img src="/modelagem.jpg" alt="Modelo" />
+<img src="/Modelagem.jpg" alt="Modelo" />
 
 A solução é dada por gerar uma solução aleatória para o problema colocando em um array a solução sem repetir os valores, após isso roda em loop cada iteração do programa até que se alcance 500 iterações ou que a melhor vizinho gerado seja igual ao estado atual da solução, em caso que não seja igual, mas que a função objetivo permaneça igual, o problema mistura a solução para que chegue em novos resultados.
 
